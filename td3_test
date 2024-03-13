@@ -1,0 +1,19 @@
+import sys
+from mrz.checker.td3 import TD3CodeChecker
+
+def test_td3_checker(mrz_code):
+    td3_check = TD3CodeChecker(mrz_code)
+    fields = td3_check.fields()
+    return fields
+
+# Access command-line arguments
+if len(sys.argv) > 1:
+    parameter = sys.argv[1]
+    print("Parameter:", parameter)
+    mrz_code = (parameter)
+    fields = test_td3_checker(mrz_code)
+    print(fields)
+
+else:
+    print("error: no parameter provided.")
+
