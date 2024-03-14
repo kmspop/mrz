@@ -9,7 +9,8 @@ def test_td3_checker(mrz_code):
 # Access command-line arguments
 if len(sys.argv) > 1:
     parameter = sys.argv[1]
-    print("Parameter:", parameter)
+    # Replace literal '\n' with newline character
+    parameter = parameter.replace("\\n", "\n")
     mrz_code = (parameter)
     fields = test_td3_checker(mrz_code)
     print(fields)
